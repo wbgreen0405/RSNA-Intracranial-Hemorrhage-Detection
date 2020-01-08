@@ -9,13 +9,6 @@ EfficientNet b7. 5-folds. Dice images + preprocessing..
 
 <br>
 
-## Requirements
-
-- Python 3.6.6
-- [Pytorch](https://pytorch.org/) 1.1.0
-- [NVIDIA apex](https://github.com/NVIDIA/apex) 0.1 (for mixed precision training)
-
-
 ## Overview
 
 ### What is Intracranial Hemorrhage?
@@ -34,18 +27,6 @@ Hemorrhage Types
 ## Motivation:
 
 Human eyes can only detect approximately 6% changes in grey scale, meaning there must be at least a 120 [Hounsfield units (HU)](https://en.wikipedia.org/wiki/Hounsfield_scale) change for us to detect a difference. Intracranial hemorrhaging usually occurs within 70 to 80 HU, making these diagnoses impossible.
-
-## Evaluation Metric
-
-Competition evaluation metric is **weighted log loss** but weights for each subtype is not disclosed as part of the competition but in the discussion forms some of the teams found it out that the any label has a weight of 2 compared to other subtypes, you can check more details [here](https://www.kaggle.com/c/rsna-intracranial-hemorrhage-detection/discussion/109526#latest-630190). But as part of this tutorial i'm going to use normal accuracy as evaluation metric and loss as **binary cross entropy loss** and checkpointing the models based on the loss.
-
-## Performance (Single model)
-
-| Backbone | Image size | LB |
-----|----|----
-| se\_resnext50\_32x4d | 512x512 | 0.070 - 0.072 |
-| se\_resnext50\_32x4d | 1024x1025 | 0.070 - 0.071 |
-| se\_resnext101\_32x4d | 512x512 | 0.070 |
 
 ## Basic EDA:
 * Our data was provided by the Radiological Society of North America (RSNA®) in collaboration with members of the American Society of Neuroradiology and MD.ai. 
