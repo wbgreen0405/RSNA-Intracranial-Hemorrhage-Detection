@@ -74,4 +74,3 @@ view_images([bsb_window(img) for img in imgs])
 ## Model
 
 EfficientNet, scaled to different block layers (B1, B2, etc) 
-<img src='assets/images.png'/>
